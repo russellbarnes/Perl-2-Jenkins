@@ -18,22 +18,22 @@ $XMLobject->xmlDecl();
 
 # There is only ONE testsuites tag per results file.
 $XMLobject->startTag('testsuites', 
-				  'name' => "Test Results for $suitename");
+	'name' => "Test Results");
 
 	# There is no limit to testsuite tags.
 	$XMLobject->startTag('testsuite', 
-						'name' => $Package # Determines the 'Class' of the testcases in the Jenkins test report
-						#'tests' => $PackageTotal, # Optional sum of tests
-						#'failures' => $PackageFailures, # Optional sum of failures
-						#'skipped' => $PackageSkipped, # Optional sum of skipped tests
-						# Optional timestamp: Mon Jan 1 12:00:00 2013
-						#'timestamp' => sprintf "%d-%02d-%02d %d:%d:%d", map { $$_[5]+1900, $$_[4]+1, $$_[3], $$_[2], $$_[1], $$_[0]} [localtime] 
+		'name' => $Package # Determines the 'Class' of the testcases in the Jenkins test report
+		#'tests' => $PackageTotal, # Optional sum of tests
+		#'failures' => $PackageFailures, # Optional sum of failures
+		#'skipped' => $PackageSkipped, # Optional sum of skipped tests
+		# Optional timestamp: Mon Jan 1 12:00:00 2013
+		#'timestamp' => sprintf "%d-%02d-%02d %d:%d:%d", map { $$_[5]+1900, $$_[4]+1, $$_[3], $$_[2], $$_[1], $$_[0]} [localtime] 
 	); 
 						
 		# There is no limit to testcase tags. Each represents one test in Jenkins:
 		$XMLobject->startTag('testcase', 
-							'name' => $TestName # The 'Test Name' in Jenkins
-							#'classname' => $Package # Optional: determines the 'Package' in Jenkins (append a comma to the above line, too)
+			'name' => $TestName # The 'Test Name' in Jenkins
+			#'classname' => $Package # Optional: determines the 'Package' in Jenkins (append a comma to the above line, too)
 		);
 
 			# Optionally print system-out and system-error here.  This will be displayed when you click on the test case in Jenkins:

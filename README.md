@@ -10,6 +10,7 @@ Perl-2-Jenkins
 Perl modules required:
 * [XML::Writer](http://search.cpan.org/perldoc?XML%3A%3AWriter)
 * IO::File (standard)
+
 Install [CPAN](http://www.cpan.org/modules/INSTALL.html) on your system to easily install new modules.
 
-This code has been tested with the native JUnit capability of Jenkins.  Simply save the results file to a job's workspace, and add a **Publish JUnit test result report** post-build step to the job's configuration.
+This code has been tested with the native JUnit capability of Jenkins.  Simply save the XML file to a job's workspace, and add a **Publish JUnit test result report** post-build step to the job's configuration.
